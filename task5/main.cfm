@@ -9,12 +9,13 @@
         <cfoutput>
             <div class="mainBody">
                 <form action="components/components.cfc?method=textField" method="post" name="form">
-                    <label>Enter your AGE</label>
+                    <label>Enter your birthday</label>
                     <input type="date" name="text" class="text">
-                    <label>Enter your mother AGE</label>
+                    <label>Enter your mother birthday</label>
                     <input type="date" name="text2"  class="text">
                     <input type="submit" value="submit" class="text" id="submit" name="formsubmit">
                 </form>
+                <div></div>
             </div>
         </cfoutput>
     </body>
