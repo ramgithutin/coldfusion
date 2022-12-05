@@ -4,8 +4,8 @@
             <cfscript>
                 task=structNew();
                 task[form.textBox1]=form.textBox2;
-                writeDump(task);
             </cfscript>
+            <cfdump  var="#task#">
         </cfif>    
     </cffunction>
 </cfcomponent>
