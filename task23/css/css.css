@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: small;
+    font-family: "Lucida Grande", Tahoma, Arial, Verdana, sans-serif;
+}
+body{
+    
+}
+.Body {
+    display: flex;
+    align-items:center ;
+    background-color: #669900;
+    justify-content: center;
+}
+.mainBody{
+    width: 640px;
+    margin: 17px auto 10px auto;
+}
+.header{
+    background-color: #99cc00;
+}
+.text {
+    padding: 10px;
+}
+.submit :hover {
+    background-color: burlywood;
+}
+.content {
+    background-color: #ffffff;
+}
