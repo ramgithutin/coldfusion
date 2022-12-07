@@ -6,10 +6,9 @@
         <link rel="stylesheet" href="css/css.css">      
     </head>
     <body>
-        <cfoutput>
-            <cfinvoke  method="textField" component = "components/components">    
+        <cfoutput>   
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form" >
+                <form action="main.cfm" method="post" name="form" enctype="multipart/form-data">
                     <label>Birthday Baby Name :</label><br>
                     <input type="text" name="name" placeholder="Enter birthday baby name!" class="field"><br>
                     <label>Enter Email Id :</label><br>
