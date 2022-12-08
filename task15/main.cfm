@@ -7,21 +7,13 @@
     </head>
     <body>
         <cfoutput>
-
-            <cfdump var="#form#">
-            <!---
-                Form sumbitted 
-            --->
-            <cfinvoke  method="textField" component = "components/components">
-            <!--- 
-                Clear form 
-            --->
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
-                    <input type="text" placeholder="enter a number between 1 and 5" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit">
+                    <cfobject component="components/components" name="multiplyValues" type="component" action="Create" >
+                    <cfinvoke  method="getOutput" component="components/components"> 
                 </form>
             </div>
+            
         </cfoutput>
     </body>
 </html>

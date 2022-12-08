@@ -1,16 +1,17 @@
 <cfcomponent>
     <cffunction  name="textField" access="remote">
-        <cfif len(trim(form.fileUpload))>
+        <cfparam name="form.file" default="">
+        <cfif len(trim(form.file))>
             <cffile action="upload"
-                fileField="fileUpload"
+                fileField="file"
                 result="thisResult"
                 nameConflict="overwrite"
-                destination="D:\cfusion\wwwroot\coldfusion\task21\assets\">
+                destination="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task21\assets\">
             <p>Thankyou, your file has been uploaded.</p>
             <cfset var = #thisResult.serverFile#>
         </cfif>
         <cfif IsDefined("form.mailId")>    
-            <cfmail to="#form.mailId#" from="ramprakashtechtvm@gmail.com" subject="#form.wishes#" type="text" mimeattach="D:\cfusion\wwwroot\coldfusion\task21\assets\#var#" >
+            <cfmail to="#form.mailId#" from="ramprakashtechtvm@gmail.com" subject="#form.wishes#"  mimeattach="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task21\assets\#var#" >
                 #form.wishes# #form.name# !!!
             </cfmail> 
         </cfif>

@@ -41,7 +41,7 @@
                     <cfset fiveDays="<font color=red>#fiveDays#</font>">
                 </cfcase>
                 <cfdefaultcase>
-                    invalid
+                    Invalid
                 </cfdefaultcase>
                 </cfswitch>
                 <cfoutput>

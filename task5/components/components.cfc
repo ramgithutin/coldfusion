@@ -3,7 +3,7 @@
         <cfif structKeyExists(form, 'formsubmit')>
             <cfset yourBirthday = form.text>
             <cfset momBirthday = form.text2>
-            <cfif #yourBirthday# eq #momBirthday# >
+            <cfif yourBirthday eq momBirthday >
                 The age should not be same
                 <cfelse>
                     <cfset nowdate = dateFormat("#now()#","yyyy")>
@@ -17,16 +17,14 @@
                     <cfset nm = dateFormat("#now()#", "mm")>
                     <cfset d = dateFormat("#yourBirthday#", "dd")>
                     <cfset nd = dateFormat("#now()#", "dd")>
-                    <cfif #m# eq #nm# && #nd# lte #d# || #m# gt #nm#>
-                        <cfelse>
-                            <cfset y = #y# + 1>
+                    <cfif m neq nm || nd gte d && m lt nm>
+                        <cfset y = #y# + 1>
                     </cfif>
                     <cfset day = createDate("#y#", "#m#" , "#d#")>
                     <cfset nextDay=dateDiff("d", now(), day)>
                     <cfset m2 = dateFormat("#momBirthday#", "mm")>
                     <cfset d2 = dateFormat("#momBirthday#", "dd")>
-                    <cfif #m2# eq #nm# && #nd# lte #d2# || #m2# gt #nm#>
-                        <cfelse>
+                    <cfif m2 neq nm || nd gte d2 && m2 lt nm>
                             <cfset y2 = #y2# + 1>
                     </cfif>
                     <cfset day2 = createDate("#y2#", "#m2#" , "#d2#")>

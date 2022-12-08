@@ -16,7 +16,7 @@
                     <label>Enter Birthday Wishes:</label><br>
                     <input type="text" name="wishes" placeholder="Enter birthday wishes!" class="field"><br>
                     <label>Enter Greeting image :</label><br>
-                    <input type="file" placeholder="" class="text" name="fileUpload"><br>
+                    <input type="file" placeholder="" class="text" name="file"><br>
                     <input type="submit" value="submit" class="text" name="submit">
                     <cfinvoke  method="textField" component = "components/components">    
                 </form>
