@@ -11,14 +11,17 @@
                 <form action="main.cfm" method="post" enctype="multipart/form-data">
                     
                     <label>Image name</label><br>
-                    <input type="text" name="name" placeholder="Enter birthday baby name!" class="text"><br>
+                    <input type="text" name="name" class="text"><br>
                     <label>description</label><br>
-                    <textarea class="text" name="textarea" rows="4" cols="50"></textarea><br>
+                    <textarea class="text"  rows="4" cols="50" name="description"></textarea><br>
                     <label>Select file</label><br>
                     <input type="file"  name="file"><br>
-                    the image should not greater than 1 MB<br>
-                    <cfinvoke  method="textField" component ="components/task14"> 
-                    <input type="submit" value="submit" class="text" name="submit">    
+                    The image should not greater than 1 MB<br>
+                    <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
+                    <input type="submit" value="submit" class="text" name="submit">
+                    <a href="main2.cfm"> <cfimage source="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\duplicate\#session.location#" name="myImage" action="writeToBrowser"></a>    
+                    <cfdump  var="#session.location#">
+                    <br> 
                 </form>
             </div>
         </cfoutput>
