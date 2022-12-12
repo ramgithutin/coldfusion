@@ -1,84 +1,93 @@
-const form = document.getElementById('form');
-const fname = document.getElementById('fname');
-const lname = document.getElementById('lname');
-const num = document.getElementById('tel');
-const email = document.getElementById('email');
-const address = document.getElementById('field');
-
-form.addEventListener('submit',e => {
-	e.preventDefault();
-
-	validateInputs();
-});
-
-const setError = (element, message) => {
-	const inputControl = element.parentElement;
-	const errorDisplay = inputControl.querySelector('.error');
-
-	errorDisplay.innerText = message;
-	inputControl.classList.add('error');
-	inputControl.classList.remove('success')
-}
-
-const setSuccess = element => {
-	const inputControl = element.parentElement;
-	const errorDisplay = inputControl.querySelector('.error');
-
-	errorDisplay.innerText = '';
-	inputControl.classList.add('success');
-	inputControl.classList.remove('error');
-};
-
-const isValidNum = num => {
-	var re = /^\d{10}$/;
-	return re.test(num);
-}
-
-
-
-const isValidEmail = email => {
-	const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-	return re.test(String(email).toLowerCase());
-}
-
-const validateInputs = () => {
-	const fnameValue = fname.value.trim();
-	const lnameValue = lname.value.trim();
-	const emailValue = email.value.trim();
-	const numValue = num.value.trim();
-	const addressValues = address.value.trim();
-	var yes = document.getElementById("yes");
-	var no = document.getElementById("no");
-	if (fnameValue === '') {
-		setError(fname, 'First Name is required');
-	} else {
-		setSuccess(fname);
+function validateform(){
+	var uname=document.forms['form']['fname'];
+	var email=document.forms['form']['email'];
+	var number=document.forms['form']['tel'];
+	var datetime=document.forms['form']['date'];
+	var uploadfile=document.forms['form']['uploadfile'];
+ 
+	nameValidate(fname);
+	emailValidate(email);
+	telephoneValidate(tel);
+	datetimeValidate(date);
+	fileValidate(uploadfile);
+	return false;
+ }
+ 
+ function errorValidate(id){
+ 
+   document.getElementById(id).style.display="block";
+ }
+ 
+ function successValidate(id){
+   document.getElementById(id).innerHTML="";
+ }
+ 
+ function nameValidate(fname){
+	
+	if(fname.value==""){
+	  errorValidate('name_div');
+	  fname.style.border="1px solid red";  
+	  return false;
 	}
-
-	if (lnameValue === '') {
-		setError(lname, 'Second Name is required');
-	} else {
-		setSuccess(lname);
+	else if(fname.value.length<3){
+	   errorValidate('name_div');
+	   fname.style.border="1px solid red"; 
+	   return false;
 	}
-
-	if (emailValue === '') {
-		setError(email, 'Email is required');
-	} else if (!isValidEmail(emailValue)) {
-		setError(email, 'Provide a valid email address');
-	} else {
-		setSuccess(email);
+	else{
+	   successValidate('name_div');
+	   fname.style.border="1px solid green";
+	   return true;
 	}
-	if (addressValues == '') {
-		setError(address, 'address is required');
-	} else {
-		setSuccess(address);
+ }
+ 
+ 
+ function emailValidate(email){
+	if(email.value==""){
+	  errorValidate('email_div');
+	  email.style.border="1px solid red";  
+	  return false;
+	}else{
+	   successValidate('email_div');
+	   email.style.border="1px solid green";
+	   return true;
 	}
-	if (numValue === '') {
-		setError(num, 'Please enter your phone number');
-	} else if (!isValidNum(numValue)) {
-		setError(num, "Provide a valid phone number");
-	} else {
-		setSuccess(num);
+ }
+ 
+ function telephoneValidate(tel){
+	if(tel.value==""){
+	  errorValidate('tel_div');
+	  tel.style.border="1px solid red";  
+	  return false;
 	}
-
-};
+	else{
+	   successValidate('tel_div');
+	   tel.style.border="1px solid green";
+	   return true;
+	}
+ }
+ 
+ function datetimeValidate(date){
+	if(date.value==""){
+	  errorValidate('date_div');
+	  date.style.border="1px solid red";  
+	  return false;
+	}else{
+	   successValidate('date_div');
+	   datetime.style.border="1px solid green";
+	   return true;
+	}
+ }
+ 
+ 
+ function fileValidate(uploadfile){     
+	if(uploadfile.value==""){
+	  errorValidate('uploadfile_div');
+	  uploadfile.style.border="1px solid red";  
+	  return false;
+	}else{
+	   successValidate('uploadfile_div');
+	   uploadfile.style.border="1px solid green";
+	   return true;
+	}
+ }

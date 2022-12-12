@@ -7,12 +7,9 @@
     </head>
     <body>
         <cfoutput>
-            <div class="mainBody">
-                <form action="main.cfm" method="post" name="form">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">
-                </form>
-            </div>
             <cfinvoke  method="textField" component = "components/components" returnVariable="jsonDeserialized">    
+            <div class="mainBody">
+            </div>
             <div class="mainBody">
                 <table>
                     

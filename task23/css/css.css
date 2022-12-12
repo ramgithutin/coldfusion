@@ -102,3 +102,21 @@ input{
 .red{
     color: #ff0000;
 }
+#name_div, 
+#address_div, 
+#email_div, 
+#tel_div,
+#qualify_div,
+#required_div,
+#week_div, 
+#local_div,
+#age_div,
+#gender_div,
+#date_div,
+#pswd_div, 
+#datetime_div, 
+#number_div,
+#uploadfile_div{
+    color: red;
+    display: none;   
+}

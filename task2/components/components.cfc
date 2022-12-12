@@ -1,6 +1,6 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfif isDefined ("form.text")>
+        <cfif structKeyExists(form, 'submit')>
             <cfswitch expression=#text#>
                 <cfcase value="1">
                     ok
