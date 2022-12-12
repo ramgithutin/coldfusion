@@ -1,93 +1,116 @@
 function validateform(){
-	var uname=document.forms['form']['fname'];
-	var email=document.forms['form']['email'];
-	var number=document.forms['form']['tel'];
-	var datetime=document.forms['form']['date'];
-	var uploadfile=document.forms['form']['uploadfile'];
- 
-	nameValidate(fname);
-	emailValidate(email);
-	telephoneValidate(tel);
-	datetimeValidate(date);
-	fileValidate(uploadfile);
+    var firstName = document.getElementById('fname');
+    var lastname = document.getElementById('lname');
+    var option = document.getElementById('option');
+    var date = document.getElementById('date');
+    var url = document.getElementById('url');
+    var mail = document.getElementById('email');
+    var phone = document.getElementById('tel');
+
+    var validatedOption = selectValidate(option);
+    var validatefirstName = optionValidate(firstName);
+    var validatelastname = lastnameValidate(lastname);
+    var validatedate = dateValidate(date);
+    var validateurl = urlValidate(url);
+    var validatemail = mailValidate(mail);
+    var validatenum = numValidate(phone);
+    if(validatedOption && validatefirstName && validatelastname && validatedate && validateurl && validatemail && validatenum)
+	return true;
+else 
 	return false;
- }
- 
- function errorValidate(id){
- 
-   document.getElementById(id).style.display="block";
- }
- 
- function successValidate(id){
-   document.getElementById(id).innerHTML="";
- }
- 
- function nameValidate(fname){
-	
-	if(fname.value==""){
-	  errorValidate('name_div');
-	  fname.style.border="1px solid red";  
-	  return false;
-	}
-	else if(fname.value.length<3){
-	   errorValidate('name_div');
-	   fname.style.border="1px solid red"; 
-	   return false;
-	}
-	else{
-	   successValidate('name_div');
-	   fname.style.border="1px solid green";
-	   return true;
-	}
- }
- 
- 
- function emailValidate(email){
-	if(email.value==""){
-	  errorValidate('email_div');
-	  email.style.border="1px solid red";  
-	  return false;
-	}else{
-	   successValidate('email_div');
-	   email.style.border="1px solid green";
-	   return true;
-	}
- }
- 
- function telephoneValidate(tel){
-	if(tel.value==""){
-	  errorValidate('tel_div');
-	  tel.style.border="1px solid red";  
-	  return false;
-	}
-	else{
-	   successValidate('tel_div');
-	   tel.style.border="1px solid green";
-	   return true;
-	}
- }
- 
- function datetimeValidate(date){
-	if(date.value==""){
-	  errorValidate('date_div');
-	  date.style.border="1px solid red";  
-	  return false;
-	}else{
-	   successValidate('date_div');
-	   datetime.style.border="1px solid green";
-	   return true;
-	}
- }
- 
- 
- function fileValidate(uploadfile){     
-	if(uploadfile.value==""){
-	  errorValidate('uploadfile_div');
-	  uploadfile.style.border="1px solid red";  
-	  return false;
-	}else{
-	   successValidate('uploadfile_div');
-	   uploadfile.style.border="1px solid green";
-	   return true;
-	}
- }
+}
+
+function error(id){
+document.getElementById(id).style.visibility="visible";
+}
+
+function success(id){
+document.getElementById(id).innerHTML="";
+}
+
+function optionValidate(firstName){ 
+
+if(firstName.value==""){
+  error('name_error');
+  firstName.style.border="1px solid red";  
+  return false;
+}else{
+   success('name_error');
+   firstName.style.border="1px solid black"
+   return true;
+}
+}
+
+function lastnameValidate(lastname){
+if(lastname.value==""){
+	error('name_error');
+	lastname.style.border="1px solid red";  
+	return false;
+}else{
+	success('name_error');
+	lastname.style.border="1px solid black"
+	return true;
+}
+}
+
+function selectValidate(option){
+if(option.value==""){
+	error('operror');
+	option.style.border="1px solid red";  
+	return false;
+}else{
+	success('operror');
+	option.style.border="1px solid black"
+	return true;
+}
+}
+
+function dateValidate(date){
+if(date.value==""){
+	error('date_error');
+	date.style.border="1px solid red";  
+	return false;
+}else{
+	success('date_error');
+	date.style.border="1px solid black"
+	return true;
+}
+}
+
+function urlValidate(url){
+if(url.value==""){
+	error('url_error');
+	url.style.border="1px solid red";  
+	return false;
+}else{
+	success('url_error');
+	url.style.border="1px solid black"
+	return true;
+}
+}
+
+function mailValidate(mail){
+if(mail.value==""){
+	error('email_error');
+	mail.style.border="1px solid red";  
+	return false;
+}else{
+	success('email_error');
+	mail.style.border="1px solid black"
+	return true;
+}
+}
+
+function numValidate(phone){
+if(phone.value==""){
+	error('num_error');
+	phone.style.border="1px solid red";  
+	return false;
+}else{
+	success('num_error');
+	phone.style.border="1px solid black"
+	return true;
+}
+}
+
+

@@ -1,26 +1,9 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfif isDefined ("form.text")>
-            <cfswitch expression=#text#>
-            <cfcase value="1">
-                ok
-            </cfcase>
-            <cfcase value="2">
-                ok
-            </cfcase>
-            <cfcase value="3">
-                fair
-            </cfcase>
-            <cfcase value="4">
-                good
-            </cfcase>
-            <cfcase value="5">
-                very good
-            </cfcase>
-            <cfdefaultcase>
-                INVALID
-            </cfdefaultcase>
-            </cfswitch>
-        </cfif>    
+        <cfif structKeyExists(form, "submit")>
+            <cfquery name="form" datasource="wufoo">
+                insert into form values('#form.option#','#form.date#','#form.url#','#form.fname#','#form.lname#','#form.email#','#form.tel#');
+            </cfquery>
+        </cfif>
     </cffunction>
 </cfcomponent>

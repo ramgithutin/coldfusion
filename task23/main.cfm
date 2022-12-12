@@ -14,7 +14,7 @@
 						<img src="assets/wflogo.png" alt="logo">
 					</div>
 					<div class="content">
-						<form action="" method="post" name="form" autocomplete="off" onsubmit="return validateform()">
+						<form action="main.cfm" method="post"  name="form" onsubmit="return validateform()">
 							<p class="larger employment">Employment Application</p>
 							<p class="small border">Infinity Box Inc</p>
 							<ul>
@@ -22,13 +22,14 @@
 									<label class="medium">Which position are you applying for? <span class="red">*</span>
 									</label>
 									<br>
-									<select name="field" id="field">
+									<select name="field" id="option">
 										<option selected="" value="Default"></option>
 										<option value="Interface Designer">Interface Designer</option>
 										<option value="Software Engineer">Software Engineer</option>
 										<option value="System Administrator">System Administrator</option>
 										<option value="Office Manager">Office Manager</option>
 									</select>
+									<span id="operror">This fiels id required,Pleast enter a value</span>
 								</li>
 								<li>
 									<label class="medium">Are you willing to relocate? <span class="red">*</span>
@@ -44,7 +45,8 @@
 										<label class="medium">When can you start? <span class="red">*</span>
 										</label>
 										<br>
-										<input type="date" id="date" name="date" onblur="validateform()">
+										<input type="date" id="date" name="date" ><br>
+										<span id="date_error">This fiels id required,Pleast enter a value</span>
 										<!--<div class="flex alignBaseline"><div><input type="text" tabindex="0" size="2" maxlength="2"><br><span class="smaller">MM</span></div><span class="space1"></span>/
                                             <span class="space1"></span><div><input type="text" size="2" maxlength="2"><br><span class="smaller">DD</span></div><span class="space1"></span>/
                                             <span class="space1"></span><div><input type="text" size="4" maxlength="4"><br><span class="smaller">YYYY</span></div><span class="space1"></span><img src="assets/calender.png" alt="calender" data-date-format="yyyy-mm-dd" ></div>-->
@@ -53,12 +55,14 @@
 								<li>
 									<label class="medium">Portfolio Web Site </label>
 									<br>
+									<input type="url" placeholder="http://" name="url" id="url" class="url" >
+                                   	<span id="url_error">Please enter a valid url in http://website.com format.</span>
 								</li>
 								<li>
 									<div class="uploadfile_div">
 										<label class="medium">Attach a Copy of Your Resume </label>
 										<br>
-										<input type="file" name="uploadfile" onblur="validateform()">
+										<input type="file" name="uploadfile">
 										<br>
 										<span class="smaller">Word or PDF Documents Only</span>
 									</div>
@@ -92,7 +96,7 @@
 										<div class="flex alignBaseline">
 											<div>
 												<span id="name_div">Name not found</span>
-												<input type="text" size="10" id="fname" onblur="validateform()" name="fname">
+												<input type="text" size="10" id="fname"  name="fname">
 												<br>
 												<span class="smaller">First</span>
 											</div>
@@ -103,6 +107,7 @@
 												<span class="smaller">Last</span>
 											</div>
 										</div>
+										<span id="name_error">This fiels id required,Pleast enter a value</span>
 									</div>
 								</li>
 								<li>
@@ -110,7 +115,8 @@
 										<label class="medium">Email Address <span class="red">*</span>
 										</label>
 										<br>
-										<input type="email" tabindex="0" size="50" id="email" name="email" ??onblur="validateform()">
+										<input type="email" tabindex="0" size="50" id="email" name="email" ??><br>
+										 <span id="email_error">This fiels id required,Pleast enter a value</span>
 									</div>
 								</li>
 								<li>
@@ -121,7 +127,8 @@
 										<!--<div class="flex alignBaseline"><div><input type="tel" tabindex="0" size="3" maxlength="3"><br><span class="smaller">######</span></div><span class="space1"></span>-
                                             <span class="space1"></span><div><input type="tel" size="3" maxlength="3"><br><span class="smaller">######</span></div><span class="space1"></span>-
                                             <span class="space1"></span><div><input type="tel" size="4" maxlength="4"><br><span class="smaller">########</span></div></div> -->
-										<input type="tel" name="tel" id="tel" onblur="validateform()">
+										<input type="tel" name="tel" id="tel" ><br>
+										<span id="num_error">This fiels id required,Pleast enter a value</span>
 									</div>
 								</li>
 								<div class="submit">
