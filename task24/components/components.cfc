@@ -7,6 +7,7 @@
             </cfquery> 
         </cfif> --->
         <cfargument name="Email" type="string" required="yes">
+        <cfdump var="#email#">
 
         <cfreturn "Hello, Nameless" />
     </cffunction>

@@ -1,11 +1,12 @@
 function checktest(){
     $.ajax({
         url:'components/components.cfc?method=emailValidate',
-        type:'post',
+        type:'get',
+        dataType: "json", 
         data:{
             method: "checkEmail1",
-            dataType: "json", 
-            Email: $("#confirmEmail").val()
+            Email: $("#email").val()
+        
         },
         success:function(data){
             alert(data)
