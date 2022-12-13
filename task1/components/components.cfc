@@ -1,15 +1,19 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfif isDefined ("form.text")>
-            <cfif form.text eq '1'>
+        <cfargument name="text"
+                    required="false"
+                    restArgsource="form"
+                    type="numeric"/>
+        <cfif structKeyExists(form, 'submit')>
+            <cfif argument.text eq '1'>
                 <cfreturn "OK">
-            <cfelseif form.text eq '2'>
+            <cfelseif argument.text eq '2'>
                 <cfreturn "OK">
-            <cfelseif form.text eq '3'>
+            <cfelseif argument.text eq '3'>
                 <cfreturn "FAIR">
-            <cfelseif form.text eq '4'>
+            <cfelseif argument.text eq '4'>
                 <cfreturn "GOOD">
-            <cfelseif form.text eq '5'>
+            <cfelseif argument.text eq '5'>
                 <cfreturn "VERY GOOD">
             <cfelse>
                 <cfreturn "INVALID">

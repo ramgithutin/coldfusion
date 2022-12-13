@@ -21,14 +21,19 @@
                     <cfelse>
                             <p>Thankyou, your file has been uploaded.</p>
                             <cfimage action="resize" source="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\#session.location#" width="20" height="20" destination="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\duplicate\#session.location#" overwrite="true">
+                        </cfif>    
                     </cfif>    
-                </cfif>    
-            </cfif>
-            <cfset session.sizeKB = #session.size#/1000>
-            <cfreturn "#session.location#">
-            <cfreturn "#session.sizeKB#">
-            <cfreturn "#session.name#">
-            <cfreturn "#session.description#">
+                    <cfreturn "#session.location#">
+                    <cfset session.sizeKB = #session.size#/1000>
+                    <cfreturn "#session.sizeKB#">
+                    <cfreturn "#session.name#">
+                    <cfreturn "#session.description#">
+                </cfif>
+                <cfreturn "#session.location#">
+                <cfset session.sizeKB = #session.size#/1000>
+                <cfreturn "#session.sizeKB#">
+                <cfreturn "#session.name#">
+                <cfreturn "#session.description#">
         </cflock>
     </cffunction>
 </cfcomponent>

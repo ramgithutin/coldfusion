@@ -10,7 +10,7 @@
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
                     <label>Name</label>
-                    <input type="text" class="text" name="name">
+                    <input type="text" class="text" name="name" id="name">
                     <label>Email id</label>
                     <input type="email" class="text" name="email" id="email">
                     <input type="checkbox" class="text" id="check" name="check" onclick="checktest()"> 

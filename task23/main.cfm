@@ -14,7 +14,7 @@
 						<img src="assets/wflogo.png" alt="logo">
 					</div>
 					<div class="content">
-						<form action="main.cfm" method="post"  name="form" onsubmit="return validateform()">
+						<form  method="post"  name="form" onsubmit="return validateform()">
 							<p class="larger employment">Employment Application</p>
 							<p class="small border">Infinity Box Inc</p>
 							<ul>
@@ -22,7 +22,7 @@
 									<label class="medium">Which position are you applying for? <span class="red">*</span>
 									</label>
 									<br>
-									<select name="field" id="option">
+									<select name="option" id="option">
 										<option selected="" value="Default"></option>
 										<option value="Interface Designer">Interface Designer</option>
 										<option value="Software Engineer">Software Engineer</option>
@@ -55,7 +55,7 @@
 								<li>
 									<label class="medium">Portfolio Web Site </label>
 									<br>
-									<input type="url" placeholder="http://" name="url" id="url" class="url" >
+									<input type="url"  name="url" id="url" class="url" >
                                    	<span id="url_error">Please enter a valid url in http://website.com format.</span>
 								</li>
 								<li>
@@ -132,9 +132,10 @@
 									</div>
 								</li>
 								<div class="submit">
-									<input type="submit" id="submit" value="Submit">
+									<input type="submit" id="submit" value="Submit" name="submit">
 								</div>
 						</form>
+						<cfinvoke method="textField" component="components/components">
 					</div>
 					<div class="footer flex alignCenter justifyCenter">
 						<span class="smaller">Powered By</span>

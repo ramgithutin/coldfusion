@@ -1,17 +1,23 @@
 <cfcomponent>
-    <cffunction name="emailValidate"  access="remote" returntype="string">
-<!---         <cfif structKeyExists(form,'submit')>
+    <cffunction name="emailValidate"  access="remote" returnformat="plain">
+       <!---  <cfif structKeyExists(form,'submit')>
+       </cfif>  --->
+        <cfargument name="Email" type="string" required="yes">
+        <cfargument name="Name" type="string" required="yes">
+        <cfquery name="validate" datasource="emailId">
+            select count(EmailId) records
+            from EmailId
+            where EmailId=<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Email#">
+        </cfquery>
+        <cfif validate.records eq 0>
             <cfquery name="Emailid" datasource="emailId"> 
                 INSERT INTO EmailId 
-                VALUES ('#form.name#', '#form.email#') 
+                VALUES ('#Name#', '#Email#') 
             </cfquery> 
-        </cfif> 
-        <cfargument name="Email" type="string" required="yes">
-        <cfquery name="validate" datasource="email">
-            select count(Email) records
-            from emailId
-            where Email='#Email#'
-        </cfquery>--->
-        <cfreturn "Hello, Nameless" />
+            <cfreturn "The mail is submit">
+
+        <cfelse>
+            <cfreturn "The mail is already there">
+        </cfif>
     </cffunction>
 </cfcomponent>

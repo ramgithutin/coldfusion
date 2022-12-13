@@ -17,12 +17,17 @@
                     <label>Select file</label><br>
                     <input type="file"  name="file"><br>
                     The image should not greater than 1 MB<br>
-                    <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
                     <input type="submit" value="submit" class="text" name="submit">
-                    <a href="main2.cfm"> <cfimage source="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\duplicate\#session.location#" name="myImage" action="writeToBrowser"></a>    
-                    <cfdump  var="#session.location#">
+                    <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
+                        <cfdump  var="#session.location#">
+                    <a href="main2.cfm"> <cfimage source="assets\duplicate\#session.location#" name="myImage" action="writeToBrowser"></a>    
                     <br> 
                 </form>
+                <cfreturn "#session.location#">
+                <cfset session.sizeKB = #session.size#/1000>
+                <cfreturn "#session.sizeKB#">
+                <cfreturn "#session.name#">
+                <cfreturn "#session.description#">
             </div>
         </cfoutput>
     </body>

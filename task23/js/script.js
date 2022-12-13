@@ -15,9 +15,9 @@ function validateform(){
     var validatemail = mailValidate(mail);
     var validatenum = numValidate(phone);
     if(validatedOption && validatefirstName && validatelastname && validatedate && validateurl && validatemail && validatenum)
-	return true;
-else 
-	return false;
+		return true;
+    else 
+		return false;
 }
 
 function error(id){

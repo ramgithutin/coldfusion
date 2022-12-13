@@ -1,5 +1,6 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
+        <!--- Cfarguments --->
         <cfif structKeyExists(form,'submit')>
             <cfscript>
                 task=structNew();

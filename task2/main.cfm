@@ -7,21 +7,20 @@
     </head>
     <body>
         <cfoutput>
-
-            <cfdump var="#form#">
             <!---
                 Form sumbitted 
             --->
-            <cfinvoke  method="textField" component = "components/components">
             <!--- 
                 Clear form 
             --->
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
                     <input type="text" placeholder="enter a number between 1 and 5" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="sumbit">
+                    <input type="submit" value="submit" class="text" id="submit" name="submit">
                 </form>
             </div>
+            <cfinvoke  method="textField" component = "components/task2"> 
+            
         </cfoutput>
     </body>
 </html>

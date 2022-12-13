@@ -1,7 +1,8 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
+        hai
         <cfif structKeyExists(form, 'submit')>
-            <cfswitch expression=#text#>
+           <cfswitch expression="#text#">
                 <cfcase value="1">
                     ok
                 </cfcase>
@@ -20,7 +21,7 @@
                 <cfdefaultcase>
                     INVALID
                 </cfdefaultcase>
-            </cfswitch>
+            </cfswitch> 
         </cfif>    
     </cffunction>
 </cfcomponent>

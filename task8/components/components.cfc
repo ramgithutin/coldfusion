@@ -1,6 +1,7 @@
 <cfcomponent>
-    <cfset session.task=structNew()>
+    
     <cffunction name="textField"  access="remote">
+        <cfset session.task=structNew()>
         <cfif structKeyExists(form,'submit')>
             <cfapplication name="GetLeadApp" sessionmanagement="Yes" sessiontimeout=#CreateTimeSpan(0,0,45,0)#>
             <cflock SCOPE="Session" TYPE="Exclusive" TIMEOUT="120">

@@ -7,12 +7,14 @@
     </head>
     <body>
         <cfoutput>   
+            <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
             <h3>The details</h3>
             <div>
-            <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
                 <cfimage source="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\#session.location#" name="myImage" action="writeToBrowser"><br>
                 The Image name = #session.name#<br>
-                The Image stored name =#session.location#<br>
+                <cfdump  var="#session.location#">
+
+                The Image stored name = #session.location#<br>
                 The Image size = #session.sizeKB# KB <br>
                 The description = #session.description# <br>
             </div>
