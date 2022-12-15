@@ -19,7 +19,11 @@
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
                 </form>
             </div>
-            <cfinvoke  method="textField" component = "components/task2"> 
+            <cfif structKeyExists( form,'submit')>
+                <cfinvoke  method="textField" component = "components/task2"> 
+                <cfset structClear(form)>
+            </cfif>
+            <cfdump var="#form#">
             
         </cfoutput>
     </body>

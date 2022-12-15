@@ -12,8 +12,8 @@
                     <input type="text" name="text">
                     <input type="submit" value="submit" class="text" id="submit" name="formsubmit">
                 </form>
+                #i#
             </div>
- 
         </cfoutput>
     </body>
 </html>

@@ -6,11 +6,13 @@
         <link rel="stylesheet" href="css/css.css">      
     </head>
     <body>
-        <cfoutput>
+        <cfoutput>   
             <div class="mainBody">
-                <form action="components/components.cfc?method=textField" method="post" name="form">
-                    <input type="text" placeholder="enter a number between 1 and 5" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">
+                <form method="post" name="form" >
+                    <textarea  name="field" id="field" rows="3" cols="25">
+                    </textarea>
+                    <input type="submit" value="submit" class="text" name="submit">
+                    <cfinvoke  method="textField" component = "components/tagCloud">    
                 </form>
             </div>
         </cfoutput>

@@ -1,13 +1,12 @@
 <cfcomponent>
     <cffunction name="textField" access="remote">
+        <cfargument name="field" default="#form.text#">
         <cfif structKeyExists(form, 'formsubmit')>
-            <cfset data = form.text>
-            <cfset arr = rematch("[\d]+",data)>
-            <cfloop array="#arr#" index="i">
+            <cfset local.data = arguments.field>
+            <cfset local.arr = rematch("[\d]+",data)>
+            <cfloop array="#local.arr#" index="i">
                 <cfif (i % 3) eq 0>
-                    <cfoutput>
-                        #i#
-                    </cfoutput>
+                    <cfreturn "#i#">
                     <cfcontinue>
                 </cfif>                
             </cfloop>
