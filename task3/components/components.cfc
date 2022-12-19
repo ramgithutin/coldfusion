@@ -6,7 +6,7 @@
             <cfset local.arr = rematch("[\d]+",data)>
             <cfloop array="#local.arr#" index="i">
                 <cfif (i % 3) eq 0>
-                    <cfreturn "#i#">
+                    <cfoutput>#i#</cfoutput>
                     <cfcontinue>
                 </cfif>                
             </cfloop>

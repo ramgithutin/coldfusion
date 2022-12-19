@@ -7,7 +7,6 @@
                 result="thisResult"
                 nameConflict="overwrite"
                 destination="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task21\assets\">
-            <p>Thankyou, your file has been uploaded.</p>
             <cfset var = #thisResult.serverFile#>
         </cfif>
         <cfif IsDefined("form.mailId")>    

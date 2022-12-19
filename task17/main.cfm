@@ -11,9 +11,12 @@
                 <form action="main.cfm" method="post" name="form">
                     <input type="number" placeholder="enter a number" class="text" name="text">
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
-                    <cfinvoke  method="textField" component = "components/components">    
                 </form>
             </div>
+            <cfif structKeyExists( form,'submit')>
+                <cfinvoke  method="textField" component = "components/components">
+                <cfset structClear(form)>
+            </cfif>
         </cfoutput>
     </body>
 </html>

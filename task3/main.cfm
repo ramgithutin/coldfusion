@@ -9,10 +9,9 @@
         <cfoutput>
             <div class="mainBody">
                 <form action="components/components.cfc?method=textField" method="post" name="form">
-                    <input type="text" name="text">
+                    <input type="text" name="text" class="text">
                     <input type="submit" value="submit" class="text" id="submit" name="formsubmit">
                 </form>
-                #i#
             </div>
         </cfoutput>
     </body>

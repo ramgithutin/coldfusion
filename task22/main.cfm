@@ -12,7 +12,6 @@
             </div>
             <div class="mainBody">
                 <table>
-                    
                     <tr>
                         <th>Name</th>
                         <th>Age</th>

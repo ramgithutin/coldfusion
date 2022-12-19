@@ -8,9 +8,7 @@
     <boby>
         <cfoutput>
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="myform" autocomplete="off">
-                    <cfinvoke  method="SQLvalue" component="components/components">
-                </form>
+                <cfinvoke  method="SQLvalue" component="components/components">
             </div>
         </cfoutput>
     <body>

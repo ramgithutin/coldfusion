@@ -14,8 +14,11 @@
                     <input type="text"  class="text" name="textBox2">
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
                 </form>
-                <cfinvoke  method="textField" component = "components/components">    
             </div>
+            <cfif structKeyExists( form,'submit')>
+                <cfinvoke  method="textField" component = "components/components">
+                <cfset structClear(form)>
+            </cfif>
         </cfoutput>
     </body>
 </html>

@@ -8,9 +8,7 @@
     <body>
         <cfoutput>
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form">
                     <cfinvoke  method="textField" component = "components/components">    
-                </form>
             </div>
         </cfoutput>
     </body>

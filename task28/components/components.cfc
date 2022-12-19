@@ -5,11 +5,17 @@
         <cfif structKeyExists(form,'submit')>
             <cfset session.name = arguments.userName >
             <cfquery name="userInfo" datasource="employee">
-                select count(*) records
-                from userInfo
+                select count(role) records
+                from cmsLoginId
+                where userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
+                and passId = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
+                select role
+                from cmsLoginId
                 where userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
                 and passId = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
             </cfquery>
+            <cfset local.userRole=userInfo.role>
+            <cfdump  var="#local.userRole#">
             <cfif userInfo.records == 1>
                 <cfset Session.flag = 1>
                 <cflocation url="welcome.cfm" addtoken="No">

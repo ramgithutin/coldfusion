@@ -10,10 +10,13 @@
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
                     <input type="text" placeholder="#form.text#" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">
-                    <cfinvoke  method="textField" component = "components/components">    
+                    <input type="submit" value="submit" class="text" id="submit" name="submit">  
                 </form>
             </div>
+            <cfif structKeyExists( form,'submit')>
+                <cfinvoke  method="textField" component = "components/components">
+                <cfset structClear(form)>
+            </cfif>
         </cfoutput>
     </body>
 </html>
