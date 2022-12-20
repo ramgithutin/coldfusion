@@ -7,12 +7,13 @@
     </head>
     <body>
         <cfoutput>   
+            <h1 class="mainBody">String word count<h1>
+            <h1 class="mainBody">Enter the text below we will count it for you<h1>
             <div class="mainBody">
-                <form method="post" name="form" >
-                    <textarea  name="field" id="field" rows="3" cols="25"></textarea>
+                <form action="components/constructor.cfc?method=count" method="post" name="form" >
+                    <textarea  name="field" id="field" rows="25" cols="100"></textarea>
                     <input type="submit" value="submit" class="text" name="submit">
                 </form>
-                <cfinvoke  method="textField" component = "components/tagCloud">    
             </div>
         </cfoutput>
     </body>
