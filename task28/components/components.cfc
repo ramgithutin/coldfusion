@@ -3,22 +3,27 @@
         <cfargument name="password" default="#form.password#">
         <cfargument name="userName" default="#form.userId#">
         <cfif structKeyExists(form,'submit')>
-            <cfset session.name = arguments.userName >
+            
             <cfquery name="userInfo" datasource="employee">
-                select count(role) records
-                from cmsLoginId
-                where userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
-                and passId = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
-                select role
+                select role,username
                 from cmsLoginId
                 where userid = <cfqueryparam value="#arguments.userName#" cfsqltype="cf_sql_varchar">
                 and passId = <cfqueryparam value="#arguments.password#" cfsqltype="cf_sql_varchar">
             </cfquery>
-            <cfset local.userRole=userInfo.role>
-            <cfdump  var="#local.userRole#">
-            <cfif userInfo.records == 1>
-                <cfset Session.flag = 1>
-                <cflocation url="welcome.cfm" addtoken="No">
+                <cfset session.name = userInfo.username >
+                <cfset session.userRole = userInfo.role>
+                <cfdump  var="#userInfo.recordCount#">
+            <cfif userInfo.recordCount>
+                <cfif session.userRole=="user">
+                    <cfset Session.userFlag = 1>
+                    <cflocation url="user.cfm" addtoken="No">
+                <cfelseif session.userRole=="admin">
+                    <cfset Session.adminFlag = 1>
+                    <cflocation url="admin.cfm" addtoken="No">
+                <cfelseif session.userRole=="editor">
+                    <cfset Session.editorFlag = 1>
+                    <cflocation url="admin.cfm" addtoken="No">
+                </cfif>
             <cfelse>
                 <cflocation url="login.cfm" addtoken="No">
                 <cfset StructClear(Session)>
