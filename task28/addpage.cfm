@@ -18,7 +18,7 @@
                         <textarea name="description" rows="5"></textarea>
                     </div>
                     <div>
-                        <input type="submit" name="addSumbit" id="edtsubmitid" value="edit">
+                        <input type="submit" name="addSumbit" id="edtsubmitid" value="Add page">
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'addSumbit')>

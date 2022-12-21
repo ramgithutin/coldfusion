@@ -6,17 +6,16 @@
         <link rel="stylesheet" href="css/css.css">      
     </head>
     <body>
-        <cfoutput>   
-            <cfinvoke  method="textField" component ="components/task14" returnVariable="session.location"> 
+        <cfoutput>    
             <h3>The details</h3>
             <div>
-                <cfimage source="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task14\assets\#session.location#" name="myImage" action="writeToBrowser"><br>
-                The Image name = #session.name#<br>
-                <cfdump  var="#session.location#">
+                <cfimage source="assets\#url.location#" name="myImage" action="writeToBrowser"><br>
+                The Image name = #url.name#<br>
+                <cfdump  var="#url.location#">
 
-                The Image stored name = #session.location#<br>
-                The Image size = #session.sizeKB# KB <br>
-                The description = #session.description# <br>
+                The Image stored name = #url.location#<br>
+                The Image size = #url.size# KB <br>
+                The description = #url.des# <br>
             </div>
         </cfoutput>
     </body>

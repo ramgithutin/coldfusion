@@ -3,7 +3,7 @@ function checktest(){
         url:'components/components.cfc?method=emailValidate',
         type:'post',
        data:{
-            method: "checkEmail1",
+            method: "checkEmail",
             Email: $("#email").val(),
             Name: $("#name").val(),
             dataType: "text",
