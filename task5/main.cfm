@@ -8,15 +8,21 @@
     <body>
         <cfoutput>
             <div class="mainBody">
-                <form action="components/components.cfc?method=textField" method="post" name="form">
+                <form method="post" name="form">
                     <label>Enter your birthday</label>
-                    <input type="date" name="text" class="text">
+                    <input type="date" name="text" class="text"  required>
                     <label>Enter your mother birthday</label>
-                    <input type="date" name="text2"  class="text">
+                    <input type="date" name="text2"  class="text" required>
                     <input type="submit" value="submit" class="text" id="submit" name="formsubmit">
                 </form>
-                <div></div>
             </div>
+            <cfif structKeyExists( form,'formsubmit')>
+                <cfinvoke  method="textField" component = "components/components" returnvariable="dateStruct"> 
+                    users age = #dateStruct.yourAge# <br>
+                    At #dateStruct.momDeliveredAge# his mother delivered him.<br>
+                    #dateStruct.nextDay# days are remaining for his and #dateStruct.nextDay2# days are remaining his mother birthday.
+                <cfset structClear(form)>
+            </cfif>
         </cfoutput>
     </body>
 </html>

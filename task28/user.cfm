@@ -20,7 +20,7 @@
                 </div>
           <cfloop query="pageList">
               <div>
-                    <a href="showpage.cfm?name=<cfoutput>#pageList.pagename#</cfoutput>"><cfoutput>#pageList.pagename#</cfoutput></a>
+                    <a href="showpage.cfm?name=#pageList.pagename#">#pageList.pagename#</a>
               </div>							
           </cfloop>
             <cfelse>

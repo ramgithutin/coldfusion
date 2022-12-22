@@ -7,11 +7,13 @@
     </head>
     <boby>
         <cfoutput>
-            <div class="mainBody">
-                <form action="componenets/components.cfc?method=textField"method="post" name="form">
-                    <input type="submit" value="submit" class="text" id="submit" name="formsubmit">
-                </form>
-            </div>
+            <cfinvoke  method="textField" component = "components/components" returnVariable="dateStruct"> 
+            #dateStruct.today#, month is #dateStruct.month# (#dateStruct.monthWords#)<br>
+            The last friday is #dateStruct.friday#<br>
+            the last day of the month #dateStruct.lastM#<br>
+            <cfloop from="1" to="5" index="i" >
+                #dateStruct[i]#<br>
+            </cfloop>
         </cfoutput>
     <body>
 <html>

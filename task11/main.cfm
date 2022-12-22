@@ -8,7 +8,7 @@
     <body>
         <cfoutput>
             <div class="mainBody">
-                    <cfinvoke  method="Field" component = "components/components">    
+                <cfinvoke  method="Field" component = "components/components">    
             </div>
         </cfoutput>
     </body>

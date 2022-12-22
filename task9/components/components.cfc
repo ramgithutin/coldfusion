@@ -1,17 +1,19 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfset session.task=structNew()>
+        <cfargument name="formKey" type="string" default="#form.textBox1#">
+        <cfargument name="formValue" type="string" default="#form.textBox2#">
         <cfif structKeyExists(form,'submit')>
-            <cfapplication name="GetLeadApp" sessionmanagement="Yes" sessiontimeout=#CreateTimeSpan(0,0,45,0)#>
-            <cflock SCOPE="Session" TYPE="Exclusive" TIMEOUT="120">
-                <cfset text = form.textBox1>
-                <cfif structKeyExists(session.task,'#text#')>
-                    <cfoutput>The key #text# is already present. Cannot add again!</cfoutput>
+            <cfif structKeyExists(session,'task')>
+                <cfif structKeyExists(session.task,"#arguments.formKey#")>
+                    <cfoutput>The key #arguments.formKey# is already present. Cannot add again!</cfoutput>
                 <cfelse>
-                    <cfset session.task[form.textBox1]=form.textBox2>
-                    <cfdump  var="#session.task#">
+                    <cfset session.task[arguments.formKey]=arguments.formValue>
+                    <cfset structAppend(session.task,session.task)>
                 </cfif>
-            </cflock>
-        </cfif>    
+            <cfelse>
+                <cfset session.task=structNew()>
+                <cfset session.task[arguments.formKey]=arguments.formValue>
+            </cfif>    
+        </cfif>
     </cffunction>
 </cfcomponent>

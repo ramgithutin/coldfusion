@@ -6,16 +6,16 @@
     </cffunction>
     <cffunction  name="getwords" access="remote" returntype="struct">
         <cfset myList = "#mytext#">
-        <cfset key=0>
+        <cfset local.key=0>
 		<cfloop list="#myList#" index="item" delimiters=" .;">
-			<cfset key=key+1>
+			<cfset local.key=local.key+1>
 			<cfset value="#item#">
  			<cfif not IsNumeric(#item#)>
    				<cfif not isDefined("myStructure")>
 					<cfset myStructure = StructNew("ordered")>
-					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
+					<cfset myVariable = StructInsert(myStructure,"#local.key#","#value#")>
 				<cfelse>
-					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
+					<cfset myVariable = StructInsert(myStructure,"#local.key#","#value#")>
 				</cfif>
    			</cfif>
 		</cfloop>   

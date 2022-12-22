@@ -19,6 +19,6 @@
 				</cfif>
    			</cfif>
 		</cfloop>   
-       		<cfreturn myStructure>
+       	<cfreturn myStructure>
     </cffunction>
 </cfcomponent>

@@ -20,11 +20,10 @@
                 </form>
             </div>
             <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/task2"> 
+                <cfinvoke  method="textField" component = "components/task2" returnvariable="var"> 
+                    #var#
                 <cfset structClear(form)>
             </cfif>
-            <cfdump var="#form#">
-            
         </cfoutput>
     </body>
 </html>

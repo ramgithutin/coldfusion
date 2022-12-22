@@ -18,6 +18,7 @@
             <cfif structKeyExists( form,'submit')>
                 <cfinvoke  method="textField" component = "components/components">
                 <cfset structClear(form)>
+                <cfdump  var="#session.task#">
             </cfif>
         </cfoutput>
     </body>

@@ -1,6 +1,5 @@
 <cfcomponent>
     <cffunction name="Field"  access="remote">
-        
         <cfset res = mulitiply(1,2)>
         <cfdump  var="#res#"><br>
         <cfset res = mulitiply(1,2,3)>
@@ -13,6 +12,6 @@
         <cfargument name="b" required="yes">
         <cfargument name="c" required="yes" default="1">
         <cfargument name="d" required="yes" default="1">
-        <cfreturn a*b*c*d>
+        <cfreturn arguments.a*arguments.b*arguments.c*arguments.d>
     </cffunction>
 </cfcomponent>

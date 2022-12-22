@@ -13,10 +13,10 @@
                     <input type="text"  class="text" name="textBox1">
                     <input type="text"  class="text" name="textBox2">
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
-                        
                 </form>
                 <cfif structKeyExists( form,'submit')>
-                    <cfinvoke  method="textField" component = "components/components">
+                    <cfinvoke  method="textField" component = "components/components" returnvariable="task">
+                        <cfdump var="#task#">
                     <cfset structClear(form)>
                 </cfif>
             </div>

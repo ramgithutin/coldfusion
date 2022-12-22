@@ -1,6 +1,6 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfargument name="field" type="numeric" default="#form.text#">
+        <cfargument name="field" type="any" default="#form.text#">
         <cfif structKeyExists(form, 'submit')>
             <cfif arguments.field eq '1'>
                 <cfreturn "OK">

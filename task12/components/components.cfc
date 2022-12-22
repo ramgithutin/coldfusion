@@ -1,21 +1,24 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
+        <cfargument name="field" type="numeric" default="#form.text#">
         <cfif structKeyExists(form, "submit")>
-            <cfset text=form.text>
-            <cfif form.text lte 10>
-                <cfquery datasource="employee" name="emp">
-                    select * from employee; 
-                </cfquery>
-            </cfif>
-            <cfloop query="emp" startRow="#text#" endRow="#text#">
-                <cfoutput>
-                    The no #text# name is #FirstName#<br>
-                </cfoutput>
-            </cfloop>
+            <cfset local.text=arguments.field>
+            <cfif arguments.field lte 10>
+                    <cfquery datasource="employee" name="emp">
+                        select * from employee; 
+                    </cfquery>
+                <cfloop query="emp" startRow="# local.text#" endRow="# local.text#">
+                    <cfoutput>
+                        The no # local.text# name is #FirstName#<br>
+                    </cfoutput>
+                </cfloop>
                 TABLE IS<br>
-            <cfoutput query="emp">
+                <cfoutput query="emp">
                     #FirstName# #LastName# <br>
-            </cfoutput>
+                </cfoutput>
+            <cfelse>
+                <cflocation url="..\main.cfm">
+            </cfif>
         </cfif>
     </cffunction>
 </cfcomponent>
