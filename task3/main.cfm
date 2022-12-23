@@ -15,9 +15,13 @@
             </div>
             <cfif structKeyExists( form,'formsubmit')>
                 <cfinvoke  method="textField" component = "components/components" returnvariable="var"> 
-                    <cfloop array="#var#" index="i">
-                        #i#
-                    </cfloop>
+                    <cfif ArrayIsEmpty(var)>
+                            <br>The value is not multiple of 3<br>
+                    <cfelse>
+                        <cfloop array="#var#" index="i">
+                            #i#
+                        </cfloop>
+                    </cfif>
                 <cfset structClear(form)>
             </cfif>
         </cfoutput>

@@ -1,6 +1,7 @@
 <cfcomponent>
     <cffunction name="textField"  access="remote">
-        <cfswitch expression="#text#">
+        <cfargument name="field" type="any" default="#form.text#">
+        <cfswitch expression="#arguments.field#">
             <cfcase value="1">
                 <cfreturn "ok">
             </cfcase>

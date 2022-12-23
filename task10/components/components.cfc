@@ -11,6 +11,5 @@
                 <cfset session.task[arguments.formKey]=arguments.formValue>
             </cfif>    
         </cfif>
-        <cfdump  var="#session.task#">
     </cffunction>
 </cfcomponent>

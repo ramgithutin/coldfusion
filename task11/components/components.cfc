@@ -1,11 +1,10 @@
 <cfcomponent>
-    <cffunction name="Field"  access="remote">
-        <cfset res = mulitiply(1,2)>
-        <cfdump  var="#res#"><br>
-        <cfset res = mulitiply(1,2,3)>
-        <cfdump  var="#res#"><br>
-        <cfset res = mulitiply(1,2,3,4)>
-        <cfdump  var="#res#"><br>
+    <cffunction name="Field"  access="remote" returntype="struct">
+        <cfset local.dateStruct=structNew()>
+        <cfset local.dateStruct.mulitiply1= mulitiply(1,2)>
+        <cfset local.dateStruct.mulitiply2 = mulitiply(1,2,3)>
+        <cfset local.dateStruct.mulitiply3 = mulitiply(1,2,3,4)>
+        <cfreturn local.dateStruct>
     </cffunction>
     <cffunction name="mulitiply">
         <cfargument name="a" required="yes">

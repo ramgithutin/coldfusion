@@ -9,11 +9,13 @@
         <cfoutput>
             <div class="mainBody">
                 <form method="post" name="form">
+                    <input type="hidden">
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
                 </form>
             </div>
             <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components">
+                <cfinvoke  method="textField" component = "components/components" returnvariable="var">
+                You have visited this page #var# times!
                 <cfset structClear(form)>
             </cfif>
         </cfoutput>

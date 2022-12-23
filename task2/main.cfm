@@ -7,20 +7,14 @@
     </head>
     <body>
         <cfoutput>
-            <!---
-                Form sumbitted 
-            --->
-            <!--- 
-                Clear form 
-            --->
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form">
+                <form method="post" name="form">
                     <input type="text" placeholder="enter a number between 1 and 5" class="text" name="text">
                     <input type="submit" value="submit" class="text" id="submit" name="submit">
                 </form>
             </div>
             <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/task2" returnvariable="var"> 
+                <cfinvoke method="textField" component = "components/task2" returnvariable="var"> 
                     #var#
                 <cfset structClear(form)>
             </cfif>

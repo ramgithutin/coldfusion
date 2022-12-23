@@ -18,9 +18,9 @@
             </div>
             <cfif structKeyExists( form,'formsubmit')>
                 <cfinvoke  method="textField" component = "components/components" returnvariable="dateStruct"> 
-                    users age = #dateStruct.yourAge# <br>
-                    At #dateStruct.momDeliveredAge# his mother delivered him.<br>
-                    #dateStruct.nextDay# days are remaining for his and #dateStruct.nextDay2# days are remaining his mother birthday.
+                users age = #dateStruct.yourAge# <br>
+                At #dateStruct.momDeliveredAge# his mother delivered him.<br>
+                #dateStruct.nextDay# days are remaining for his and #dateStruct.nextDay2# days are remaining his mother birthday.
                 <cfset structClear(form)>
             </cfif>
         </cfoutput>

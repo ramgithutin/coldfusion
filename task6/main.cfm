@@ -7,7 +7,6 @@
     </head>
     <body>
         <cfoutput>
-           
             <div class="mainBody">
                 <form method="post" name="form" autocomplete="off">
                     <input type="text"  class="text" name="textBox1">
@@ -16,7 +15,7 @@
                 </form>
                 <cfif structKeyExists( form,'submit')>
                     <cfinvoke  method="textField" component = "components/components" returnvariable="task">
-                        <cfdump var="#task#">
+                    <cfdump var="#task#">
                     <cfset structClear(form)>
                 </cfif>
             </div>

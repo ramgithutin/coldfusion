@@ -16,9 +16,12 @@
                 </form>
             </div>
             <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components">
+                <cfinvoke  method="textField" component = "components/components" returnvariable="dateStruct">
                 <cfset structClear(form)>
-                <cfdump  var="#session.task#">
+                <cfdump  var="#session.task#"><br>
+                <cfif dateStruct.count==1>
+                    The key #dateStruct.value# is already present. Cannot add again!
+                </cfif>
             </cfif>
         </cfoutput>
     </body>
