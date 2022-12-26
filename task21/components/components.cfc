@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction  name="textField" access="remote">
+    <cffunction  name="textField" access="remote" returntype="string">
         <cfargument name="fieldmailId" type="any" default="#form.mailId#">
         <cfargument name="fieldname" type="any" default="#form.name#">
         <cfargument name="fieldwishes" type="any" default="#form.wishes#">
@@ -9,13 +9,14 @@
                 fileField="file"
                 result="thisResult"
                 nameConflict="overwrite"
-                destination="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task21\assets\">
-            <cfset var = #thisResult.serverFile#>
+                 destination="#expandpath("./assets")#">
+            <cfset local.var = #thisResult.serverFile#>
         </cfif>
-        <cfif structKeyExists(form,'submit')>    
-            <cfmail to="#arguments.fieldmailId#" from="ramprakashtechtvm@gmail.com" subject="#arguments.fieldwishes#"  mimeattach="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task21\assets\#var#" >
+        <cfif structKeyExists(form,'formSubmit')>    
+            <cfmail to="#arguments.fieldmailId#" from="ramprakashtechtvm@gmail.com" subject="#arguments.fieldwishes#"  mimeattach="#expandpath("./assets/#local.var#")#">
                 #arguments.fieldwishes# #arguments.fieldname# !!!
             </cfmail> 
+            <cfreturn "mail is successully send">
         </cfif>
     </cffunction>
 </cfcomponent>

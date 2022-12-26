@@ -20,11 +20,13 @@
                     <input type="submit" value="submit" class="text" name="submit">
                     <br> 
                 </form>
-                <cfdump  var="#form#">
                 <cfif structKeyExists(form, 'submit')>
-                    <cfinvoke  method="textField" component ="components/task14"> 
-                        <a href="main2.cfm?name=#session.name#&location=#session.location#&size=#session.sizeKB#&des=#session.description#"> <cfimage source="assets\duplicate\#session.location#" name="myImage" action="writeToBrowser"></a> 
-                        <cfset structClear(form)>
+                    <cfinvoke  method="textField" component ="components/task14" returnVariable="var">
+                    <br>#var#<br>
+                    <a href="main2.cfm?name=#session.name#&location=#session.location#&size=#session.sizeKB#&des=#session.description#"> 
+                        <cfimage source="#expandpath("./assets/duplicate/#session.location#")#" name="myImage" action="writeToBrowser">
+                    </a> 
+                    <cfset structClear(form)>
                 </cfif> 
             </div>
         </cfoutput>

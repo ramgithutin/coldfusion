@@ -19,8 +19,8 @@
                 <cfinvoke  method="textField" component = "components/components" returnvariable="dateStruct">
                 <cfset structClear(form)>
                 <cfdump  var="#session.task#"><br>
-                <cfif dateStruct.count==1>
-                    The key #dateStruct.value# is already present. Cannot add again!
+                <cfif structKeyExists( session,'count')>
+                    The key #session.value# is already present. Cannot add again!
                 </cfif>
             </cfif>
         </cfoutput>

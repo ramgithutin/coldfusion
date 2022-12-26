@@ -25,7 +25,7 @@
                             WHERE pageid = '#pageList.pageid#'
                         </cfquery>
                         <tr>
-                            <td><cfoutput>#pageList.pagename#</cfoutput></td>
+                            <td>#pageList.pagename#</td>
                             <td><a href="edit.cfm?name=#pageList.pagename#&id=#descList.pageid#&desc=#descList.pagedescs#">EDIT</a></td>
                             <td><a href="delete.cfc?method=deletepage&id=#descList.pageid#">DELETE</a></td></td>
                         </tr>

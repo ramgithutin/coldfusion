@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction name="SQLvalue" access="remote">
+    <cffunction name="SQLvalue" access="remote" returntype="query">
         <cfset 
             queryData= queryNew("ID, Name, Email","Integer,Varchar,Varchar",
             [
@@ -7,6 +7,6 @@
                 {ID=2, Name="Ram Prakash", email="ramprakash@gmail.com"},
                 {ID=3, Name="Narveen K A", email="narveenka@gmail.com"}
             ])>
-            <cfdump var="#queryData#">
+            <cfreturn queryData>
     </cffunction>
 </cfcomponent>

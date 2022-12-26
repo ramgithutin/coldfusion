@@ -7,9 +7,7 @@
     </head>
     <body>
         <cfoutput>
-            <cfinvoke  method="textField" component = "components/components" returnVariable="jsonDeserialized">    
-            <div class="mainBody">
-            </div>
+            <cfinvoke  method="textField" component = "components/components" returnVariable="jsonDeserialized"> 
             <div class="mainBody">
                 <table>
                     <tr>

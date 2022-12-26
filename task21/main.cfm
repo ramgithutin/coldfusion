@@ -8,7 +8,7 @@
     <body>
         <cfoutput>   
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form" enctype="multipart/form-data">
+                <form method="post" name="form" enctype="multipart/form-data">
                     <label>Birthday Baby Name :</label><br>
                     <input type="text" name="name" required placeholder="Enter birthday baby name!" class="field"><br>
                     <label>Enter Email Id :</label><br>
@@ -17,14 +17,14 @@
                     <input type="text" name="wishes" required placeholder="Enter birthday wishes!" class="field"><br>
                     <label>Enter Greeting image :</label><br>
                     <input type="file" placeholder="" class="text" name="file" required><br>
-                    <input type="submit" value="submit" class="text" name="submit">    
+                    <input type="submit" value="submit" class="text" name="formSubmit">    
                 </form>
             </div>
-            <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components">
+            <cfif structKeyExists( form,'formSubmit')>
+                <cfinvoke  method="textField" component = "components/components" returnvariable="message">
+                    #message#
                 <cfset structClear(form)>
             </cfif>
-            <cfdump var="#form#">
         </cfoutput>
     </body>
 </html>

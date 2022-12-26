@@ -10,14 +10,15 @@
             <div class="mainBody">
                 <form  method="post" name="form">
                     <input type="text" placeholder="enter a number between 1 and 10" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">   
+                    <input type="submit" value="submit" class="text" id="submit" name="formSubmit">   
                 </form>
             </div>
-            <cfinvoke method="textField" component = "components/components" returnvariable="emp">
+            <cfif StructKeyExists(form, "formSubmit") >
+                <cfinvoke method="textField" component = "components/components" returnvariable="var">
+                The no #form.text# name is #var#<br>
+                <cfinclude template="task.cfm">
+                <cfset StructClear(form)>
+            </cfif>
         </cfoutput>
-            
-            <cfoutput query="emp">
-                #FirstName# #LastName# <br>
-            </cfoutput>
     </body>
 </html>

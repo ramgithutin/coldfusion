@@ -14,7 +14,7 @@
                     <label>Email id</label>
                     <input type="email" class="text" name="email" id="email">
                     <input type="checkbox" class="text" id="check" name="check" onclick="checktest()"> 
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">
+                    <input type="submit" value="submit" class="text" id="submit" name="submit" disabled>
                     </form>
                 </div>
             </cfoutput>

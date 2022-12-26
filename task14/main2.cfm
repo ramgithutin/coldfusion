@@ -11,8 +11,6 @@
             <div>
                 <cfimage source="assets\#url.location#" name="myImage" action="writeToBrowser"><br>
                 The Image name = #url.name#<br>
-                <cfdump  var="#url.location#">
-
                 The Image stored name = #url.location#<br>
                 The Image size = #url.size# KB <br>
                 The description = #url.des# <br>

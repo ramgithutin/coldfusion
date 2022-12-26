@@ -10,12 +10,16 @@
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
                     <input type="number" placeholder="enter a number" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">
+                    <input type="submit" value="submit" class="text" id="formsubmit" name="formsubmit">
                 </form>
             </div>
-            <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components">
+            <cfif structKeyExists( form,'formsubmit')>
+                <cfinvoke  method="textField" component = "components/components" returnVariable="dateStruct">
+                <cfloop item="currentKey" collection="#dateStruct#"> 
+                    #dateStruct[currentKey]#
+                </cfloop>
                 <cfset structClear(form)>
+                <cfset structClear(dateStruct)>
             </cfif>
         </cfoutput>
     </body>

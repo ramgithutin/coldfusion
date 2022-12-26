@@ -8,7 +8,8 @@
     <boby>
         <cfoutput>
             <div class="mainBody">
-                <cfinvoke  method="SQLvalue" component="components/components">
+                <cfinvoke  method="SQLvalue" component="components/components" returnvariable="queryNew">
+                <cfdump var="#queryNew#">
             </div>
         </cfoutput>
     <body>

@@ -8,12 +8,15 @@
     <body>
         <cfoutput>
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form">
-                    <cfobject component="components/components" name="multiplyValues" type="component" action="Create" >
-                    <cfinvoke  method="getOutput" component="components/components"> 
-                </form>
+                <cfobject component="components/components" name="multiplyValues" type="component" action="Create" >
+                <cfset multiplyValues = createObject("component","components/components")>
+                <cfset mulitiply=multiplyValues.mulitiply(1,2)>
+                #mulitiply#
+                <cfset mulitiply="#multiplyValues.mulitiply(1,2,3)#">
+                #mulitiply#
+                <cfset mulitiply="#multiplyValues.mulitiply(1,2,3,4)#">
+                #mulitiply#
             </div>
-            
         </cfoutput>
     </body>
 </html>

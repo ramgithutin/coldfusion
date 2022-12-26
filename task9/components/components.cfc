@@ -6,8 +6,8 @@
                 <cfset local.dateStruct=structNew()>
             <cfif structKeyExists(session,'task')>
                 <cfif structKeyExists(session.task,"#arguments.formKey#")>
-                    <cfset local.dateStruct.count =1>
-                    <cfset local.dateStruct.value =arguments.formKey>
+                    <cfset session.count =1>
+                    <cfset session.value =arguments.formKey>
                 <cfelse>
                     <cfset local.dateStruct.count =0>
                     <cfset session.task[arguments.formKey]=arguments.formValue>

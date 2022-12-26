@@ -9,12 +9,13 @@
         <cfoutput>
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form">
-                    <input type="text" class="text" name="text">
-                    <input type="submit" value="submit" class="text" id="submit" name="submit">  
+                    <input type="text" class="text" name="textFind">
+                    <input type="submit" value="submit" class="text" id="submit" name="formSubmit">  
                 </form>
             </div>
-            <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components">
+            <cfif structKeyExists( form,'formSubmit')>
+                <cfinvoke  method="textField" component = "components/components" returnVariable="count">
+                 Found the "#form.textFind#" word in #count# times
                 <cfset structClear(form)>
             </cfif>
         </cfoutput>

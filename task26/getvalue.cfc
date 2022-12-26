@@ -2,9 +2,9 @@
     <cffunction  name="count" access="remote">
         <cftry>
             <cftry>
-                <cffile action="upload" fileField="fileField" nameConflict="overwrite" result="thisResult" destination="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task26\assets\">
-                <cfset local.location = #thisResult.serverFile#>
-                <cffile action="read" file="C:\ColdFusion2018\cfusion\wwwroot\coldfusion\task26\assets\#local.location#" variable="fieldList">
+                <cffile action="upload" fileField="fileField" nameConflict="overwrite" result="thisResult" destination="#expandpath("./assets")#">
+                <cfset local.location = thisResult.serverFile>
+                <cffile action="read" file="#expandpath("./assets/#local.location#")#" variable="fieldList">
             <cfcatch type = "any">
                 <cflocation  url="index.cfm" addtoken="no">
             </cfcatch>

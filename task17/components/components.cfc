@@ -1,20 +1,20 @@
 <cfcomponent>
-    <cffunction name="textField"  access="remote">
-        <cfif structKeyExists(form,'submit')>
-            <cfif form.text gt "0">
-                <cfset data = form.text>
-                <cfloop from="1" to="#data#" index="i">
-                    <cfif  (#i# % 2) eq 0>
+    <cffunction name="textField"  access="remote" returntype="struct">
+        <cfargument name="field" default="#form.text#">
+        <cfif structKeyExists(form,'formsubmit')>
+            <cfif arguments.field gt "0">
+                <cfset local.dateStruct=structNew()>
+                <cfloop from="1" to="#arguments.field#" index="i">
+                    <cfif  (i % 2) eq 0>
                         <cfset i="<font color=Green>#i#</font>">
                     <cfelse>
                         <cfset i="<font color=Blue>#i#</font>">
                     </cfif>
-                    <cfoutput>
-                        <br>#i# <br>
-                    </cfoutput>
+                    <cfset structInsert( local.dateStruct,i,i)>
                 </cfloop>    
+                <cfreturn local.dateStruct> 
                 <cfelse>
-                  Invalid number!
+                  <cflocation url = "main.cfm">
             </cfif>
         </cfif>    
     </cffunction>
