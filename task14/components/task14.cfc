@@ -26,7 +26,7 @@
                 </cfif>    
             </cfif>    
             <cfset session.sizeKB = #session.size#/1000>
-            <cfreturn"">
+            <cfreturn "">
         </cfif>
     </cffunction>
 </cfcomponent>

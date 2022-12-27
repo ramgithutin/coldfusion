@@ -14,7 +14,6 @@
         </cfif>
         <cfif structKeyExists(form,'formSubmit')>    
             <cfmail to="#arguments.fieldmailId#" from="ramprakashtechtvm@gmail.com" subject="#arguments.fieldwishes#"  mimeattach="#expandpath("./assets/#local.var#")#">
-                #arguments.fieldwishes# #arguments.fieldname# !!!
             </cfmail> 
             <cfreturn "mail is successully send">
         </cfif>

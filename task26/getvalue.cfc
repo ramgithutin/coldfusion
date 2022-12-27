@@ -13,7 +13,8 @@
             <cfset myword="#myObj.getwords()#">
             <cfloop collection="#myword#" item="words">
                 <cfquery name="check" datasource="employee">
-                    SELECT word,numberOfTime  FROM wordCount
+                    SELECT word,numberOfTime  
+                    FROM wordCount
                     WHERE word =<cfqueryparam cfsqltype="cf_sql_varchar" value="#StructFind(myword,words)#">
                 </cfquery>
                 <cfif check.word eq "">

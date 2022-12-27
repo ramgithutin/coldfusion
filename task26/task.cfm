@@ -23,8 +23,5 @@
             <a href="##" style="font-size: #size#px; text-decoration:none; color:rgb(#x#,#y#,#z#)">#textCount.Word# (#textCount.numberOfTime#)</a>
             <cfset valueText="#textCount.numberOfTime#">
         </cfoutput>
-        <cfquery name="tableTruncate" datasource="employee">
-        truncate table wordCount
-        </cfquery>
     </body>
 </html>

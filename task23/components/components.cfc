@@ -9,13 +9,14 @@
         <cfargument name="fieldurl" type="any" default="#form.url#">
         <cfif structKeyExists(form, "submit")>
             <cfquery name="works" datasource="employee">
-                insert into works values(<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldOption#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldfname#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldlname#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldemail#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldtel#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fielddate#">,
-                                        <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldurl#">);
+                INSERT INTO works 
+                VALUES(<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldOption#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldfname#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldlname#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldemail#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldtel#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fielddate#">,
+                    <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.fieldurl#">);
             </cfquery>
         </cfif>
     </cffunction>

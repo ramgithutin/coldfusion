@@ -5,7 +5,7 @@
                 <cfcookie name="visitsCounter" value=0>
             </cfif>
             <cfset Cookie.visitsCounter = Cookie.visitsCounter+1>
-               <cfreturn Cookie.visitsCounter>
+            <cfreturn Cookie.visitsCounter>
         </cfif>    
     </cffunction>
 </cfcomponent>

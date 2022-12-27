@@ -9,9 +9,9 @@
         <cfoutput>
             <div class="mainBody">
                 <cfinvoke  method="Field" component = "components/components" returnvariable="dateStruct">  
-                <cfdump var="#dateStruct.mulitiply1#"><br>
-                <cfdump var="#dateStruct.mulitiply2#"><br>
-                <cfdump var="#dateStruct.mulitiply3#"><br> 
+                    mulitiply(1,2) = #dateStruct.mulitiply1#<br>
+                    mulitiply(1,2,3) = #dateStruct.mulitiply2#<br>
+                    mulitiply(1,2,3,4) = #dateStruct.mulitiply3#<br> 
             </div>
         </cfoutput>
     </body>

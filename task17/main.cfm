@@ -15,11 +15,10 @@
             </div>
             <cfif structKeyExists( form,'formsubmit')>
                 <cfinvoke  method="textField" component = "components/components" returnVariable="dateStruct">
-                <cfloop item="currentKey" collection="#dateStruct#"> 
-                    #dateStruct[currentKey]#
-                </cfloop>
+                    <cfloop array="#dateStruct#" index="i">
+                        #i#
+                    </cfloop>
                 <cfset structClear(form)>
-                <cfset structClear(dateStruct)>
             </cfif>
         </cfoutput>
     </body>

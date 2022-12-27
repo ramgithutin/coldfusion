@@ -9,13 +9,13 @@
         <cfset local.key=0>
 		<cfloop list="#myList#" index="item" delimiters=" .;">
 			<cfset local.key=local.key+1>
-			<cfset value="#item#">
+			<cfset local.value="#item#">
  			<cfif not IsNumeric(#item#)>
    				<cfif not isDefined("myStructure")>
 					<cfset myStructure = StructNew("ordered")>
-					<cfset myVariable = StructInsert(myStructure,"#local.key#","#value#")>
+					<cfset myVariable = StructInsert(myStructure,"#local.key#","#local.value#")>
 				<cfelse>
-					<cfset myVariable = StructInsert(myStructure,"#local.key#","#value#")>
+					<cfset myVariable = StructInsert(myStructure,"#local.key#","#local.value#")>
 				</cfif>
    			</cfif>
 		</cfloop>   

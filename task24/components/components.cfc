@@ -3,9 +3,9 @@
         <cfargument name="Email" type="string" required="yes">
         <cfargument name="Name" type="string" required="yes">
         <cfquery name="validate" datasource="emailId">
-            select count(EmailId) records
-            from EmailId
-            where EmailId=<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Email#">
+            SELECT count(EmailId) records
+            FROM EmailId
+            WHERE EmailId=<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.Email#">
         </cfquery>
         <cfif validate.records eq 0>
             <cfquery name="Emailid" datasource="emailId"> 
