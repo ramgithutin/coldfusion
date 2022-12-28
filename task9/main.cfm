@@ -16,7 +16,7 @@
                 </form>
             </div>
             <cfif structKeyExists( form,'submit')>
-                <cfinvoke  method="textField" component = "components/components" returnvariable="dateStruct">
+                <cfinvoke  method="textField" component = "components/components">
                 <cfset structClear(form)>
                 <cfdump  var="#session.task#"><br>
                 <cfif structKeyExists( session,'count')>

@@ -9,6 +9,9 @@
                 <cflocation  url="index.cfm" addtoken="no">
             </cfcatch>
             </cftry>
+            <cfquery name="delectwordCount" datasource="employee">
+                DELETE FROM wordCount
+            </cfquery>
             <cfset myObj = createObject("component", "components/tagCloud").textField(mytext="#fieldList#")>
             <cfset myword="#myObj.getwords()#">
             <cfloop collection="#myword#" item="words">

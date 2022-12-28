@@ -10,12 +10,12 @@
             <div class="mainBody">
                 <cfobject component="components/components" name="multiplyValues" type="component" action="Create" >
                 <cfset multiplyValues = createObject("component","components/components")>
-                <cfset mulitiply=multiplyValues.mulitiply(1,2)>
-                #mulitiply#
-                <cfset mulitiply="#multiplyValues.mulitiply(1,2,3)#">
-                #mulitiply#
-                <cfset mulitiply="#multiplyValues.mulitiply(1,2,3,4)#">
-                #mulitiply#
+                <cfset multiply=multiplyValues.multiply(1,2)>
+                #multiply#
+                <cfset multiply="#multiplyValues.multiply(1,2,3)#">
+                #multiply#
+                <cfset multiply="#multiplyValues.multiply(1,2,3,4)#">
+                #multiply#
             </div>
         </cfoutput>
     </body>

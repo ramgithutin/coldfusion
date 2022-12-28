@@ -10,10 +10,7 @@
                         <div>
                             <h2>Welcome #session.userRole# </h2> <br>
                         </div>
-                        <cfquery name="pageList" datasource="employee">
-                            SELECT pagename,pagedescs,pageid
-                            FROM pages
-                        </cfquery>
+                        <cfinvoke  method="list" component="components/pageList" returnVariable="pageList">
                     </div>
                     <div class="logout">
                         <a href="login.cfm" class="logout"><button>LOGOUT</button></a>
@@ -24,10 +21,9 @@
                     </div>
                     <table class="tableBorder">
                         <cfloop query="pageList">
-                            <cfquery name="descList" datasource="employee">
-                                SELECT pagedescs,pageid FROM pages
-                                WHERE pageid = '#pageList.pageid#'
-                            </cfquery>
+                            <cfset args = StructNew()> 
+                            <cfset args.pageid = "#pageList.pageid#"> 
+                            <cfinvoke  method="descLists" component="components/pageList" argumentCollection="#args#"  returnVariable="descList">
                             <tr class="tableBorder">
                                 <td class="tableBorder">#pageList.pagename#</td>
                                 <td class="tableBorder"><a href="edit.cfm?name=#pageList.pagename#&id=#descList.pageid#&desc=#descList.pagedescs#">EDIT</a></td>

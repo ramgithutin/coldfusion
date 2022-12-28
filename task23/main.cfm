@@ -47,9 +47,6 @@
 										<br>
 										<input type="date" id="date" name="date" ><br>
 										<span id="date_error">This fiels id required,Pleast enter a value</span>
-										<!--<div class="flex alignBaseline"><div><input type="text" tabindex="0" size="2" maxlength="2"><br><span class="smaller">MM</span></div><span class="space1"></span>/
-                                            <span class="space1"></span><div><input type="text" size="2" maxlength="2"><br><span class="smaller">DD</span></div><span class="space1"></span>/
-                                            <span class="space1"></span><div><input type="text" size="4" maxlength="4"><br><span class="smaller">YYYY</span></div><span class="space1"></span><img src="assets/calender.png" alt="calender" data-date-format="yyyy-mm-dd" ></div>-->
 									</div>
 								</li>
 								<li>
@@ -135,7 +132,9 @@
 									<input type="submit" id="submit" value="Submit" name="submit">
 								</div>
 						</form>
-						<cfinvoke method="textField" component="components/components">
+						<cfif structKeyExists(form, "submit")>
+							<cfinvoke method="textField" component="components/components">
+						</cfif>
 					</div>
 					<div class="footer flex alignCenter justifyCenter">
 						<span class="smaller">Powered By</span>

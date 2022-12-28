@@ -4,29 +4,35 @@
     </head>
     <body>
         <cfoutput>
-            <cfif structKeyExists( session,'userFlag')>
-                <div class="mainBody">
-                    <div>
-                        <h1>WELCOME User</h1> <br>
+            <div class="backgroundImage">
+                <cfif structKeyExists( session,'userFlag')>
+                    <div class="mainBody ">
+                        <div>
+                            <h2>Welcome #session.userRole# </h2> <br>
+                        </div>
                     </div>
-                    <a href="login.cfm" class="logout">LOGOUT</a>
-                    <cfquery name="pageList" datasource="employee">
-                            select pagename,pagedescs from pages
-                    </cfquery>
-                </div>
-                <h2>hai #session.name#<h2>
-                <div>
-                    <h3>Page List</h3>
-                </div>
-          <cfloop query="pageList">
-              <div>
-                    <a href="showpage.cfm?name=#pageList.pagename#">#pageList.pagename#</a>
-              </div>							
-          </cfloop>
-            <cfelse>
-                <cflocation url="login.cfm" addtoken="No">
-                <cfset  StructClear(Session)>
-            </cfif>
+                    <div class="logout">
+                        <a href="login.cfm" class="logout"><button>LOGOUT</button></a>
+                    </div>
+                    <cfinvoke  method="pageList" component="components/pageList" returnvariable="dateStruct">
+                    <em>Hi #session.name#<em>
+                    <div>
+                        <strong>Page List</strong>
+                    </div>
+                    <table class="tableBorder">
+                        <cfloop query="dateStruct">
+                            <tr class="tableBorder">
+                                <td class="tableBorder">
+                                    <a href="showpage.cfm?name=#dateStruct.pagename#">#dateStruct.pagename#</a>
+                                </td>
+                            </tr>
+                        </cfloop>
+                    </table>
+                <cfelse>
+                    <cflocation url="login.cfm" addtoken="No">
+                    <cfset  StructClear(Session)>
+                </cfif>
+            </div>
         </cfoutput>
     </body>
 </html>

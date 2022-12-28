@@ -2,9 +2,7 @@
     <head>
     </head>
     <body>        
-        <cfquery datasource="employee" name="emp">
-            select * from employee; 
-        </cfquery>
+        <cfinvoke method="getquery" component = "components/components" returnvariable="emp">
         TABLE IS<br>
         <cfoutput query="emp">
             #FirstName# #LastName# <br>

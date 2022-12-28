@@ -4,16 +4,24 @@
         <cfif structKeyExists(form, "formSubmit")>
             <cfset local.text=arguments.field>
             <cfif arguments.field lte 10>
-                    <cfquery datasource="employee" name="emp">
-                        select * from employee; 
-                    </cfquery>
+                <cfquery datasource="employee" name="emp">
+                    SELECT FirstName
+                    FROM employee; 
+                </cfquery>
                 <cfloop query="emp" startRow="#local.text#" endRow="#local.text#">
-                    <cfset local.varible=FirstName>
+                    <cfset local.variable=FirstName>
                 </cfloop>
-                    <cfreturn local.varible>
+                    <cfreturn local.variable>
             <cfelse>
                 <cflocation url="./main.cfm">
             </cfif>
         </cfif>
+    </cffunction>
+    <cffunction  name="getquery">
+        <cfquery datasource="employee" name="emp">
+            SELECT FirstName,LastName 
+            FROM employee; 
+        </cfquery>
+        <cfreturn emp>
     </cffunction>
 </cfcomponent>

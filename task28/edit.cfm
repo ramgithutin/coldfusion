@@ -4,7 +4,7 @@
     <body>
         <cfoutput>
             <cfif structKeyExists( session,'name')>
-                <form name="form" action="edit.cfm?name=#url.name#&id=#url.id#&desc=#url.desc#" method="post" class="formpage">
+                <form name="form"  method="post" class="formpage">
                     <div>
                         <label >Page Name:</label>
                         <input type="text" name="pagename" id="pagenameid" class="form-control edit" value="#url.name#">
@@ -18,11 +18,9 @@
                     </div> 	
                 </form>
                 <cfif structKeyExists(form,'editSumbit')>
-                    <cfquery name="edit" datasource="employee">
-                        UPDATE Pages
-                        SET pagename=<cfqueryparam value="#form.pagename#" cfsqltype="cf_sql_varchar">, pagedescs=<cfqueryparam value="#form.description#" cfsqltype="cf_sql_varchar">
-                        WHERE pageid='#url.id#'
-                    </cfquery>
+                    <cfset args = StructNew()> 
+                    <cfset args.id="#url.id#">
+                    <cfinvoke  method="editpage" component="components/pageList" argumentCollection="#args#">
                     <cflocation url="admin.cfm"> 
                 </cfif>
             <cfelse>

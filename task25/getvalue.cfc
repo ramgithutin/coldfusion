@@ -3,6 +3,9 @@
         <cftry>    
             <cfset myObj = createObject("component", "components/tagCloud").textField(mytext="#field#")>
             <cfset myword="#myObj.getwords()#">
+                        <cfquery name="delectwordCount" datasource="employee">
+                DELETE FROM wordCount
+            </cfquery>
             <cfloop collection="#myword#" item="words">
                 <cfquery name="check" datasource="employee">
                     SELECT word,numberOfTime  FROM wordCount
