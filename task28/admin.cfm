@@ -13,7 +13,13 @@
                         <cfinvoke  method="list" component="components/pageList" returnVariable="pageList">
                     </div>
                     <div class="logout">
-                        <a href="login.cfm" class="logout"><button>LOGOUT</button></a>
+                        <form method="post">
+                            <input type="submit" name="LOGOUT" value="LOGOUT">
+                        </form>
+                        <cfif structKeyExists(form,'LOGOUT')>
+                            <cfset structClear(session)>
+                            <cflocation  url="login.cfm">
+                        </cfif>
                     </div>
                     <em>Hi #session.name#<em>
                     <div>

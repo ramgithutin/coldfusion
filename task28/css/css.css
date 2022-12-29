@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+.flex{
+    display: flex;
+}
 .mainBody {
     display: flex;
     align-items:center ;

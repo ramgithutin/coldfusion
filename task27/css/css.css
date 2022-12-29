@@ -2,15 +2,48 @@
     margin: 0px;
     padding: 0px;
 }
+.flex{
+    display: flex;
+}
 .mainBody {
     display: flex;
     align-items:center ;
     justify-content: center;
-    margin: 70px 0px 0px 0px;
+}
+.main{
+    border: 1px solid black;
+    width: 200px;
+    background-color: rgb(187, 197, 210);
+    margin: 25px 0px 0px 0px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.log{
+    display: flex;
+    justify-content: flex-end;
 }
 .text {
     padding: 10px;
 }
 .submit :hover {
     background-color: burlywood;
+}
+.backgroundImage{
+    background-image: url(../assets/background.jpg);
+}
+.tableBorder {
+    border: 1px solid;
+    padding: 5px;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+.addPage{
+    background-color: #3c8031;
+    color: #ffffff;
+    padding: 5px;
+}
+.logout{
+    background-color: rgba(255, 0, 0, 0.604);
 }

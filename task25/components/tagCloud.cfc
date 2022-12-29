@@ -10,13 +10,13 @@
 		<cfloop list="#myList#" index="item" delimiters=" .;">
 			<cfset local.key=local.key+1>
 			<cfset local.value="#item#">
- 			<cfif not IsNumeric(#item#)>
-   				<cfif not isDefined("myStructure")>
-					<cfset myStructure = StructNew("ordered")>
-					<cfset myVariable = StructInsert(myStructure,"#local.key#","#local.value#")>
+ 			<cfif not IsNumeric(item)>
+				<cfif structKeyExists(local,"myStructure")>
+					<cfset myVariable = StructInsert(local.myStructure,"#key#","#value#")>
 				<cfelse>
-					<cfset myVariable = StructInsert(myStructure,"#local.key#","#local.value#")>
-				</cfif>
+					<cfset local.myStructure = StructNew("ordered")>
+					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
+				</cfif>>
    			</cfif>
 		</cfloop>   
        		<cfreturn myStructure>

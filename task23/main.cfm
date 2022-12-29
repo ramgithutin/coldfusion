@@ -121,9 +121,6 @@
 										<label class="medium">Phone <span class="red">*</span>
 										</label>
 										<br>
-										<!--<div class="flex alignBaseline"><div><input type="tel" tabindex="0" size="3" maxlength="3"><br><span class="smaller">######</span></div><span class="space1"></span>-
-                                            <span class="space1"></span><div><input type="tel" size="3" maxlength="3"><br><span class="smaller">######</span></div><span class="space1"></span>-
-                                            <span class="space1"></span><div><input type="tel" size="4" maxlength="4"><br><span class="smaller">########</span></div></div> -->
 										<input type="tel" name="tel" id="tel" ><br>
 										<span id="num_error">This fiels id required,Pleast enter a value</span>
 									</div>
@@ -134,6 +131,7 @@
 						</form>
 						<cfif structKeyExists(form, "submit")>
 							<cfinvoke method="textField" component="components/components">
+								<cfset structClear(form)>
 						</cfif>
 					</div>
 					<div class="footer flex alignCenter justifyCenter">

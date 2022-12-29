@@ -8,7 +8,6 @@ function checktest(){
             Name: $("#name").val(),
             dataType: "text",
             dataType:"text"
-        
         },
         success:function(data){
             alert(data)

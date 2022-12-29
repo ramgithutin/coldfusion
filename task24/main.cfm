@@ -19,6 +19,7 @@
                 </div>
             </cfoutput>
             <script src="assets/jquery.js"></script>
-            <script src="js/script.js"></script>    
+            <script src="js/script.js"></script>  
+        </cfoutput>  
     </body>
 </html>

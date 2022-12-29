@@ -4,25 +4,27 @@
     </head>
     <body>
         <cfoutput>
-            <div class="mainBody">
-                    <cfif structKeyExists( session,'flag')>
+            <div class="backgroundImage">
+                <cfif structKeyExists( session,'flag')>
+                    <div class="mainBody ">
                         <div>
-                            <h1>WELCOME </h1> <br>
-                            <h2>hai #session.name#<h2>
+                            <h2>Welcome #session.name# </h2> <br>
                         </div>
-                        <form method="post" name="form">
-                            <input type="submit" value="logout" name="logout" class="text">
+                    </div>
+                    <div class="log">
+                        <form method="post">
+                            <input type="submit" name="LOGOUT" value="LOGOUT" class="logout">
                         </form>
-                        <cfif structKeyExists( form,'logout')>
-                            <cfinvoke method="logoutField" component="components/task27">
-                                <cfset structClear(form)>
-                            </cfif>
-                        <cfelse>
-                            <cflocation url="login.cfm" addtoken="No">
-                            <cfset  StructClear(Session)>
+                        <cfif structKeyExists(form,'LOGOUT')>
+                            <cfset structClear(session)>
+                            <cflocation  url="login.cfm">
                         </cfif>
-                        <cfset  StructClear(session)>
-                </div>
+                    </div>
+                <cfelse>
+                    <cflocation url="login.cfm" addtoken="No">
+                    <cfset  StructClear(Session)>
+                </cfif>
+            </div>
         </cfoutput>
     </body>
 </html>
