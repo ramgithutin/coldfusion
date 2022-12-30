@@ -7,7 +7,6 @@
     </head>
     <body>
         <cfoutput>
-           
             <div class="mainBody">
                 <form action="main.cfm" method="post" name="form" autocomplete="off">
                     <input type="text"  class="text" name="textBox1">

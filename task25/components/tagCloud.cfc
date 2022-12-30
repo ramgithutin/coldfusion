@@ -15,11 +15,11 @@
 					<cfset myVariable = StructInsert(local.myStructure,"#key#","#value#")>
 				<cfelse>
 					<cfset local.myStructure = StructNew("ordered")>
-					<cfset myVariable = StructInsert(myStructure,"#key#","#value#")>
+					<cfset myVariable = StructInsert(local.myStructure,"#key#","#value#")>
 				</cfif>>
    			</cfif>
 		</cfloop>   
-       		<cfreturn myStructure>
+       		<cfreturn local.myStructure>
     </cffunction>
 	<cffunction  name="countText" access="remote" returnType="query">
 		<cfquery name="textCount" datasource="employee">

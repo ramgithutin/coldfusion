@@ -1,6 +1,6 @@
 <cfcomponent>
     <cffunction name="makeRandomString" returnType="string" output="false">
-	    <cfset var chars = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+	    <cfset var chars = "1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz">
 	    <cfset var length = 6>
 	    <cfset var result = "">
 	    <cfloop index="i" from="1" to="#length#">

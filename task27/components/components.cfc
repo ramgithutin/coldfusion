@@ -19,4 +19,8 @@
             </cfif>
         </cfif>
     </cffunction>
+    <cffunction name="logout"  access="public">
+        <cfset structClear(session)>
+        <cflocation url="login.cfm" addtoken="No">
+    </cffunction>
 </cfcomponent>

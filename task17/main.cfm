@@ -8,7 +8,7 @@
     <body>
         <cfoutput>
             <div class="mainBody">
-                <form action="main.cfm" method="post" name="form">
+                <form method="post" name="form">
                     <input type="number" placeholder="enter a number" class="text" name="text">
                     <input type="submit" value="submit" class="text" id="formsubmit" name="formsubmit">
                 </form>

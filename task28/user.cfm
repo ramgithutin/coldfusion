@@ -16,8 +16,7 @@
                             <input type="submit" name="LOGOUT" value="LOGOUT">
                         </form>
                         <cfif structKeyExists(form,'LOGOUT')>
-                            <cfset structClear(session)>
-                            <cflocation  url="login.cfm">
+                            <cfinvoke  method="logout" component="components/pageList">
                         </cfif>
                     </div>
                     <cfinvoke  method="pageList" component="components/pageList" returnvariable="dateStruct">
