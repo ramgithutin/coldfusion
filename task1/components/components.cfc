@@ -1,5 +1,5 @@
 <cfcomponent>
-    <cffunction name="textField"  access="remote">
+    <cffunction name="textField"  access="public">
         <cfargument name="field" type="any" default="#form.text#">
         <cfif structKeyExists(form, 'submit')>
             <cfif arguments.field eq '1'>

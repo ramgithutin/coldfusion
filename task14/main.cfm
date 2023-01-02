@@ -23,7 +23,7 @@
                 <cfif structKeyExists(form, 'submit')>
                     <cfinvoke  method="textField" component ="components/task14" returnVariable="var">
                     <br>#var#<br>
-                    <a href="main2.cfm?name=#session.name#&location=#session.location#&size=#session.sizeKB#&des=#session.description#"> 
+                    <a href="main2.cfm"> 
                         <cfimage source="#expandpath("./assets/duplicate/#session.location#")#" name="myImage" action="writeToBrowser">
                     </a> 
                     <cfset structClear(form)>

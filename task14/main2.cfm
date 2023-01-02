@@ -9,11 +9,11 @@
         <cfoutput>    
             <h3>The details</h3>
             <div>
-                <cfimage source="assets\#url.location#" name="myImage" action="writeToBrowser"><br>
-                The Image name = #url.name#<br>
-                The Image stored name = #url.location#<br>
-                The Image size = #url.size# KB <br>
-                The description = #url.des# <br>
+                <cfimage source="assets\#session.location#" name="myImage" action="writeToBrowser"><br>
+                The Image name = #session.name#<br>
+                The Image stored name = #session.location#<br>
+                The Image size =#session.sizeKB# KB <br>
+                The description = #session.description# <br>
             </div>
         </cfoutput>
     </body>

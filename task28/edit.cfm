@@ -3,7 +3,7 @@
     </head>
     <body>
         <cfoutput>
-            <cfif structKeyExists( session,'name')>
+            <cfif structKeyExists( session,'adminFlag')>
                 <form name="form"  method="post" class="formpage">
                     <div>
                         <label >Page Name:</label>

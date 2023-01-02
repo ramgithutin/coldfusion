@@ -21,7 +21,6 @@
                     </div>
                 <cfelse>
                     <cflocation url="login.cfm" addtoken="No">
-                    <cfset  StructClear(Session)>
                 </cfif>
             </div>
         </cfoutput>
